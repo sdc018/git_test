@@ -74,15 +74,19 @@ h1{
   animation:shake 0.8s ease 3 forwards;
 }
 
-.score-circle {
+#playerscore div, #computerscore div {
     height:50px;
     width:50px;
     border-radius: 50%;
     border:2px solid blue; 
 }
 
-.playerscore, .computerscore{
+#playerscore, #computerscore{
     display:flex;
+}
+
+#playerscore .active,#computerscore .active{
+    background-color: blue;
 }
 
 #modal{
