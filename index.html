@@ -7,6 +7,7 @@
      <script src="script.js" defer></script>
     <link rel="stylesheet" href="reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Gloria+Hallelujah">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Rock Paper Scissor Game</title>
@@ -17,10 +18,10 @@
     <div class="container">
         <div class="animations">
             <div id="animations-left">
-                <img src="images/RockPlayer.jpeg">
+                <img id = "playerImage" src="images/RockPlayer.jpeg">
             </div>
             <div id="animations-right">
-                <img src="images/RockComputer.jpeg">
+                <img id = "computerImage" src="images/RockComputer.jpeg">
             </div>
         </div>
         <div id="choices">
@@ -30,16 +31,17 @@
         </div>
         <div class="score">
             <div id="playerscore">
-                <div class="score-circle"></div>
-                <div class="score-circle"></div>
-                <div class="score-circle"></div>
-                
+                <p>Player Score:</p>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <p id="Start">Click to start!</p>
             <div id="computerscore">
-                <div class="score-circle"></div>
-                <div class="score-circle"></div>
-                <div class="score-circle"></div>
+                <p>Computer Score:</p>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
         <div id="modal-container">

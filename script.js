@@ -1,12 +1,20 @@
         const buttons = document.querySelectorAll('#choices button');
         const start = document.getElementById("Start");
-        const computerImage = document.getElementById('animations-right');
-        const playerImage = document.getElementById('animations-left');
+        const playerImage = document.getElementById('playerImage');
+        const computerImage = document.getElementById('computerImage');
         const winner= document.getElementById("winner");
         var playerScore = 0;
         var computerScore = 0;
         var playerScorediv = document.querySelectorAll('#playerscore div')
         var computerScorediv = document.querySelectorAll('#computerscore div')
+        var playerImageArray = {'rock':'images/RockPlayer.jpeg','paper':'images/PaperPlayer.jpeg','scissor':'images/ScissorPlayer.jpeg'}
+        var computerImageArray = {'rock':"images/RockComputer.jpeg",'paper':"images/PaperComputer.jpeg",'scissor':"images/ScissorComputer.jpeg"}
+     
+
+
+
+     
+
 
         console.log(playerScorediv);
         console.log(computerScorediv);
@@ -20,6 +28,7 @@
           computerImage.classList.remove('active');
           playerImage.classList.remove('active');
           reset();
+          ScoreUpdate(winner.textContent);
         });
     
 
@@ -34,7 +43,7 @@
           game(button.id);
           setTimeout(function(){
             modalcontainer.style.display="block";
-          }, 2700);
+          }, 3200);
         }));
 
         //This is for the Click to start where the choices button will show
@@ -50,11 +59,24 @@
         {    
              const playerSelection =  playerChoice;
              const computerSelection = getComputerChoice();
+             setTimeout(function(){
+              changeImage(playerSelection,computerSelection);
+            }, 2500);
              console.log(computerSelection);
              console.log(playerSelection);
              playRound(playerSelection, computerSelection);
 
         }
+
+        //This is a function to change image based on the player and computer choice
+        function changeImage(playerChoice, computerChoice){
+
+   
+            playerImage.src=playerImageArray[playerChoice];
+            computerImage.src=computerImageArray[computerChoice];
+        }
+
+        
 
 
         //This is a function to check who is the winner
@@ -83,7 +105,6 @@
              console.log("Player Win");
              winner.textContent="Player Win!";
              playerScore++;
-             ScoreUpdate("Player");
              console.log("Player Score" + playerScore);
              console.log("Computer Score" + computerScore);
             }
@@ -92,7 +113,6 @@
              console.log("Computer Win");
              winner.textContent="Computer Win!";
              computerScore++;
-             ScoreUpdate("Computer");
              console.log("Player Score" + playerScore);
              console.log("Computer Score" + computerScore);
             }
@@ -105,15 +125,24 @@
             }
 
             if(playerScore === 3)
+            {
+              setTimeout(function(){
+                ScoreUpdate(winner.textContent);
+              }, 2500);
             winner.textContent="The winner is Player!";
+            }
             if(computerScore === 3)
+            {
+              setTimeout(function(){
+                ScoreUpdate(winner.textContent);
+              }, 2500);
             winner.textContent="The winner is Computer!";
-
+            }
           }
 
           //This is a function that will update the CSS for score
         function ScoreUpdate(winner){
-          if (winner === "Player")
+          if (winner === "Player Win!")
           {
             for (x=0;x<playerScore;x++)
             {
@@ -133,6 +162,9 @@
              }
             }
           }
+
+          playerImage.src=playerImageArray['rock'];
+            computerImage.src=computerImageArray['rock'];
 
         }
         
