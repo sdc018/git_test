@@ -1,0 +1,127 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#choices .show{
+    visibility: visible;
+}
+
+body{
+    background: url(images/paper-gb42e652ed_1920.jpg) no-repeat center center/cover;
+    height:100vh;
+}
+
+.animations,.score,.choices{
+    position: relative;
+}
+
+h1{
+   margin-top:5rem;
+   text-align: center;
+   font-size:3rem;
+}
+
+.container{
+    background-color: turquoise;
+    margin: 50px auto;
+    height:500px;
+    width:820px;
+}
+
+
+.animations
+{
+    height:200px;
+    display:flex;
+    background: #a1dbe7;
+}
+
+.animations img{
+    height:150px;
+}
+
+#choices{
+    padding-top: 10px;
+    display:flex;
+    gap:10px;
+    justify-content: space-around;
+}
+#choices button{
+   visibility:hidden;
+   font-size:2.60rem;
+   padding:50px 100px;
+   background-color: #e3f5f8;
+   border:3px solid #056ee6;
+   transition: 0.4s;
+}
+
+#choices #rock:hover, #choices #paper:hover,#choices #scissor:hover{
+    background-color: #056ee6; 
+    border: 1px solid white;
+    color: white;
+}
+
+.score{
+    display:flex;
+    justify-content: space-between;
+    padding:50px 100px;
+    background-color: turquoise;
+}
+
+.animations .active,#animations .active{
+  animation:shake 0.8s ease 3 forwards;
+}
+
+.score-circle {
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    border:2px solid blue; 
+}
+
+.playerscore, .computerscore{
+    display:flex;
+}
+
+#modal{
+    position: absolute;
+    background-color: white;
+    padding:20px;
+    border-radius: 10px;
+    font-size:6rem;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:300px;
+    width:700px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    animation:animatemodal .8s;
+}
+
+#close-btn{
+    cursor:pointer;
+}
+
+#modal-container{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index: 1;
+    display:none;
+}
+
+@keyframes shake{
+    from{transform:translateY(0px)}
+    to{transform:translateY(30px)}
+}
+
+@keyframes animatemodal{
+    from{top:-300px;opacity:0}
+    to{top:50%;opacity:1}
+}
