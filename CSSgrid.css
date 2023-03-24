@@ -48,7 +48,6 @@ header{
 @media screen and (max-width: 992px) {
     article{
         grid-column: span 3;
-        grid-column:span 3;
         display:grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
