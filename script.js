@@ -29,6 +29,9 @@
           playerImage.classList.remove('active');
           reset();
           ScoreUpdate(winner.textContent);
+          buttons[0].disabled = false;
+          buttons[1].disabled = false;
+          buttons[2].disabled = false;
         });
     
 
@@ -44,10 +47,13 @@
           setTimeout(function(){
             modalcontainer.style.display="block";
           }, 3200);
+          buttons[0].disabled = true;
+          buttons[1].disabled = true;
+          buttons[2].disabled = true;
         }));
 
         //This is for the Click to start where the choices button will show
-        start.addEventListener ('click', () => {
+        start.addEventListener ('click', ()   => {
           buttons[0].classList.add("show");
           buttons[1].classList.add("show");
           buttons[2].classList.add("show");
@@ -112,7 +118,7 @@
             {
              console.log("Computer Win");
              winner.textContent="Computer Win!";
-             computerScore++;
+             computerScore++; 
              console.log("Player Score" + playerScore);
              console.log("Computer Score" + computerScore);
             }
